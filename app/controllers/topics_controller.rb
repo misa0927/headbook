@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
-  before_action :set_topics, only:[:edit, :update, :destroy]
-  before_action :aithemticate_user!
+  before_action :set_topic, only:[:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @topics = Topic.all
@@ -17,7 +17,6 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topics_params)
     @topic.user_id = current_user.id
-    @topic.image.retrieve_from_cache! params[:cache][:image]
     if @topic.save
       redirect_to topics_path,notice:"トピックを投稿しました！"
       NoticeMailer.sendmail_topic(@topic).deliver
@@ -35,18 +34,18 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic.destory
+    @topic.destroy
     redirect_to topics_path,notice:"投稿を削除しました！"
   end
 
   def confirm
     @topic = Topic.new(topics_params)
-    render :new if @topics.invalid?
+    render :new if @topic.invalid?
   end
 
   private
   def topics_params
-    params.reqire(:topic).permit(:title,:content,:image,:image_cache)
+    params.require(:topic).permit(:title,:content,:image,:image_cache)
   end
 
   def set_topic

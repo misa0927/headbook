@@ -1,3 +1,165 @@
+body{
+  height: 100%;
+  background: linear-gradient(#e3e6f1,#d4d9e9);
+}
+
+.wrap{
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+}
+
+.network{
+  margin-right: 15px;
+}
+
+.introduction{
+  color: #0e385f;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 29px;
+  margin-top: 40px;
+  width: 450px;
+  word-spacing: -1px;
+}
+
+.map{
+  align-self: center;
+  background-size: 537px 195px;
+  background-image: url("map.png");
+  background-repeat: no-repeat;
+  flex-basis: 537px;
+  height:195px;
+}
+
+.form_wrap{
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.head{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.account{
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.info{
+  font-size: 19px;
+  color: #1d2129;
+}
+
+.under{
+  border-top: 1px solid #dddfe2;
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+.navbar-default {
+    border: 0;
+    padding: 0 20px;
+    height: 83px;
+}
+.navbar {
+    background-color: #3b5998;
+    color: #fff;
+    margin-bottom: 0px;
+}
+.navbar-brand{
+  padding-top: 37px;
+  font-family: tahoma;
+  font-size: 36px;
+  font-weight: bold;
+  width: 170px;
+  height: 55px;
+}
+
+.navbar-default {
+  .navbar-brand {
+    color: #fff;
+    &:hover {
+      color: #ccc;
+    }
+  }
+  .navbar-nav > li > a {
+    color: #fff;
+    &:hover, &:focus {
+      color: #ccc;
+    }
+  }
+
+  .navbar-right{
+    padding-top: 17px;
+  }
+}
+
+.flash{
+  color: #003569;
+  padding-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff;
+    text-align: center;
+    &:hover, &:focus {
+      color: #ccc;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+footer{
+    width: 100%;
+    background-color: #fafafa;
+    height: 100px;
+    position: absolute;
+    bottom:0;
+}
+
+.page_footer{
+  color: #3b5998;
+  margin: 0 auto;
+}
+
+.navbar-left li{
+  list-style: none;
+  display: block;
+  padding:8px 5px 0 5px;
+  font-size: 12px;
+}
+
+.contentline{
+  border-bottom: 1px solid #dddfe2;
+  font-size: 1px;
+  height: 8px;
+  margin-bottom: 8px;
+}
+
+.copy{
+  color: #737373;
+  padding: 15px;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
 // Place all the styles related to the Top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
