@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  validates :title,:content, presence: true
+  validates :title,:content, :image, presence: true
   belongs_to :user
-  
+  mount_uploader :image, ImageUploader
 end

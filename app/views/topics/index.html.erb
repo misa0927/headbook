@@ -10,6 +10,11 @@
         <p><%=topic.user.name %></p>
         <h4>タイトル:<%= topic.title %></h4>
         <p>内容:<%= topic.content %></p>
+        <%if topic.image? %>
+        <%= image_tag(topic.image) %>
+        <% else %>
+        <%= image_tag 'no_image.png' %>
+        <% end %>
       <br>
       <%= link_to "編集",edit_topic_path(topic.id),class:'btn btn-default btn-sm btn-success' %>
       <%= link_to "削除",topic_path(topic.id), method: :delete,data:{confirm:'本当に削除していいですか？'},class:'btn btn-default btn-sm btn-danger' %>
