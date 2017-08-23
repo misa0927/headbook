@@ -1,9 +1,14 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only:[:edit, :update, :destroy]
+  before_action :set_topic, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
     @topics = Topic.all
+  end
+
+  def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments
   end
 
   def new
