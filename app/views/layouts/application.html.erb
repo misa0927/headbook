@@ -6,6 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+  $(function(){
+      reviseMargin();
+      function reviseMargin(){
+          $(".wrapper").css({
+              "margin-bottom": $("footer")[0].offsetHeight + "px"
+          });
+      }
+  });
+  </script>
 </head>
 <body>
   <header>
@@ -27,6 +37,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "トピックス",topics_path %></li>
+                <li><%= link_to "ユーザー一覧",users_path if user_signed_in? %></li>
               </ul>
             </li>
             <% if user_signed_in? %>
