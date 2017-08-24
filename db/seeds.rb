@@ -10,8 +10,9 @@
             uid: uid
             )
 
-    topic = Topic.new(title:"sample",
+    topic = Topic.create!(title:"sample",
             content: "content",
+            image: File.open("./app/assets/images/no_image.png"),
             user_id: user.id)
 
     10.times do
