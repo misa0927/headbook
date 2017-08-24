@@ -1,20 +1,23 @@
-100.times do |n|
+10.times do |n|
     email = Faker::Internet.email
-    name = "name"
-    password = "password"
-    User.create!(email: email,
+    name = Faker::Cat.name
+    password = Faker::Internet.password
+    uid = SecureRandom.uuid
+    user = User.create(email: email,
+            name: name,
             password: password,
             password_confirmation: password,
-            name: name,
+            uid: uid
             )
-end
 
-n = 1
-    while n <= 100
-    Blog.create(
-        title: "sample",
-        content: "aaa",
-        user_id: n
-        )
-        n = n + 1
+    topic = Topic.new(title:"sample",
+            content: "content",
+            user_id: user.id)
+
+    10.times do
+      topic.comments.build(content:"comment",
+      user_id: user.id)
     end
+
+    topic.save
+  end
