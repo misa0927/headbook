@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <script>
+  <!--<script>
   $(function(){
       reviseMargin();
       function reviseMargin(){
@@ -15,9 +15,10 @@
           });
       }
   });
-  </script>
+</script>-->
 </head>
 <body>
+  <div class="wrap">
   <header>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -55,6 +56,9 @@
 
 <%= yield %>
 
+</div>
+</div>
+
 <footer>
     <div class="container-fluid">
       <div class="page_footer">
@@ -74,12 +78,12 @@
           </ul>
         </div>
       </div>
-    </div>
+
 
     <div class="contentline"></div>
 
-      </div>
           <span class="copy">&copy; 2017 headbook</span>
+          </div>
 </footer>
 
 </body>
